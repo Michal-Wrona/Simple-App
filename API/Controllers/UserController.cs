@@ -1,6 +1,7 @@
 using API.DTOs;
 using API.Interfaces;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
@@ -18,6 +19,7 @@ namespace API.Controllers
         }
 
 
+        
         [HttpGet]
         public async Task<ActionResult<IEnumerable<GetUserDto>>> GetUsers()
         {
@@ -49,7 +51,7 @@ namespace API.Controllers
             return Ok(getUserDto);
         }
 
-        // [Authorize]
+        [Authorize]
         [HttpPut]
         public async Task<ActionResult> EditUser(UserEditDto userEditDto)
         {

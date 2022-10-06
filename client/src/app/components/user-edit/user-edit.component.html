@@ -1,0 +1,17 @@
+<div class="col-8">
+    <!-- <tabset class="user-tabset"> -->
+        <!-- <tab heading='About {{user.username}}'> -->
+            <form #editForm="ngForm" id="editForm" (ngSubmit)="updateUser()">
+                <div class="form-inline">
+                    <label for="city">Username</label>
+                    <input [(ngModel)]="user.username" type="text" name="username" class="form-control mx-2">
+                    <label for="city">Address</label>
+                    <input [(ngModel)]="user.address" type="text" name="address" class="form-control mx-2">
+                </div>
+            </form>
+        <!-- </tab> -->
+    <!-- </tabset> -->
+
+    <button [disabled]="!editForm.dirty" form="editForm" type="submit">Changes</button>
+
+</div>

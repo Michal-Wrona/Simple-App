@@ -1,0 +1,16 @@
+<div class="aa">
+    <mat-accordion>
+      <mat-expansion-panel >
+        <mat-expansion-panel-header>
+          <mat-panel-title>{{user.username}}</mat-panel-title>
+          <mat-panel-description>{{user.address}}</mat-panel-description>
+          <button *ngIf="userService.currentUser$ |async" 
+            (click)="setEditUser(user)" 
+            
+            routerLink='user-edit/{{user.username}}' >Edit {{user.username}}
+          </button>
+        </mat-expansion-panel-header>
+        {{user.username}} - {{user.address}} - {{user.dateOfBirth| date:'yyyy-MM-dd'}}
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
